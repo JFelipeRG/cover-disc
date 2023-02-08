@@ -1,74 +1,68 @@
-*{
-    margin: 0;
-    padding: 0;
-  }
-  body, html{
-    background-color: lightcyan;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container{
+:root {
+  --background-color: lightcyan;
+}
+
+body,
+html {
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(10px 15px 7px);
+}
+
+.caja {
+  background: url("assets/img/ACDC_Back_in_Black_cover.svg.png");
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+
+/* ========DISC======== */
+
+@keyframes rotar {
+  100% {
+    transform: translateX(300px) rotate(180deg);
   }
-  .caja{
-    background: url(assets/img/ACDC_Back_in_Black_cover.svg.png);
-    background-size: 100%;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 5px 5px 5px;
-    z-index: 1;
-  }
+}
 
-  /* ========DISC======== */
+.disc,
+.disc > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  @keyframes rotar{
+.disc {
+  animation: rotar 3s both infinite alternate;
+  position: relative;
+  right: 50%;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(#000, #000 20px, #232323 20px, #020202 25px);
+}
 
-    0% {
-     transform: translateX(0)
-    }
-    100% {
-     transform: translateX(300px)
-    }
-   }
+.disc-red {
+  background: red;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 
-  .disc, .disc>*{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-  .disc{
-    animation: rotar 3s both infinite alternate;
-    position: relative;
-    right: 50%;
-    background-color: rgb(88, 88, 88);
-    width: 390px;
-    height: 390px;
-    box-shadow: 5px 5px 5px;
-    border-radius: 50%;
-    background: repeating-radial-gradient(#000000, #000000 20px, #232323 20px, #020202 25px);
-  }
-  .disc-red{
-    margin: 10%;
-    background-color: rgb(255, 0, 0);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
-  .disc-white{
-    margin: 10%;
-    background-color: rgb(255, 255, 255);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-  }
-
-
- 
+.disc-white {
+  margin: 10%;
+  background: var(--background-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
